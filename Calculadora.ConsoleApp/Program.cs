@@ -41,7 +41,7 @@
 
 //return;
 
-
+-///asdas
 //Arrays
 string[] historicoOperacoes = new string[100];
 int contadorOperacoes = 0;
