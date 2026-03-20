@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-string[] historicoOperacoes = new string[1];
+string[] historicoOperacoes = new string[100];
 int contadorOperacoes = 0;
 
 while (true == true)
@@ -131,11 +131,10 @@ while (true == true)
         textoOperacao = $"{primeiroNumero} / {segundoNumero} = {resultado}";
     }
 
-    if (contadorOperacoes < historicoOperacoes.Length)
-    {
-        historicoOperacoes[contadorOperacoes] = textoOperacao;
-        contadorOperacoes++;
-    }
+
+    historicoOperacoes[contadorOperacoes] = textoOperacao;
+    contadorOperacoes++;
+
 
 
     Console.WriteLine("O resultado é: " + resultado);
