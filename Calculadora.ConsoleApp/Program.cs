@@ -1,54 +1,11 @@
-﻿//Objetivos / Passo a passo
+﻿using System.Reflection;
 
-//V1
-//1. Nossa calculadora deve ter a possibilidade de somar dois números [X]
-//2. Nossa calculadora deve ter a possibilidade de subtrair dois números [X]
-//3. Nossa calculadora deve ter a possibilidade de multiplicar dois números [X]
-//4. Nossa calculadora deve ter a possibilidade de dividir dois números [X]
-//5. Nossa calculadora deve permitir que o usuário continue utilizando o sistema até decidir sair [X]
-//6. Nossa Cacluladora deve ter a possibilidade de executar operações em continuidade []
-
-
-//V2
-// Nossa calculadora deve produzir a tabuada de um numero informado
-// Nossa calculadora deve armazenar o histórico de operações anteriores
-
-
-//5:
-//5 x 1 = 5
-//5 x 2 = 10
-//...
-
-
-//Estruturas de Repetição
-//Enquanto
-///bool deveContinuarExecutando = true;
-/// 
-/// string texto
-/// int numeros
-/// bool  = true / false
-
-//Arrays
-///string[] operacoes = new string[3];
-///operacoes[0] = "Não exploda 0";
-///operacoes[1] = "Não exploda 1";
-///operacoes[2] = "Não exploda 2";
-///
-///for (int iterador = 0; iterador < operacoes.Length; iterador = iterador + 1)
-///{
-///    Console.WriteLine(operacoes[iterador]);
-///}
-
-//return;
-
--///asdas
-//Arrays
-string[] historicoOperacoes = new string[100];
+string[] historicoOperacoes = new string[1];
 int contadorOperacoes = 0;
 
 while (true == true)
 {
-
+    Console.Clear();
     Console.WriteLine("----------------------------------------");
     Console.WriteLine("Calculadora 2026");
     Console.WriteLine("----------------------------------------");
@@ -87,11 +44,9 @@ while (true == true)
         int numeroDigitado = Convert.ToInt32(strNumeroDigitado);
 
         Console.WriteLine(numeroDigitado);
-        // Console.WriteLine(numeroDigitado + " x " + 1 + " = " + numeroDigitado * 1);
 
         for (int iterador = 1; iterador <= 10; iterador++)
         {
-            //string linhaTabuada = numeroDigitado + " x " + iterador + " = " + numeroDigitado * iterador;
             string linhaTabuada = $"{numeroDigitado} x {iterador} = {numeroDigitado * iterador}";
             Console.WriteLine(linhaTabuada);
         }
@@ -107,18 +62,34 @@ while (true == true)
         Console.WriteLine("----------------------------------------");
         Console.WriteLine("Histórico de Operações");
         Console.WriteLine("----------------------------------------");
-        Console.Write("Digite um numero inteiro: ");
-        string strNumeroDigitado = Console.ReadLine();
 
-        for (int iterador = 1; iterador < historicoOperacoes.Length; iterador++)
+        for (int iterador = 0; iterador < historicoOperacoes.Length; iterador++)
         {
-            if (historicoOperacoes[iterador] == null)
+            if (historicoOperacoes[iterador] != null)
             {
-
+                Console.WriteLine(historicoOperacoes[iterador]);
             }
+
         }
 
-        Console.WriteLine("Digite ENTER para continuar... ");
+        Console.WriteLine("------------------------------------------ ");
+        Console.Write("Digite ENTER para continuar...");
+        Console.ReadLine();
+        continue;
+    }
+
+    if (opcao == "5")
+    {
+        Console.Clear();
+        Console.WriteLine("----------------------------------------");
+        Console.WriteLine("Tabuada");
+        Console.WriteLine("----------------------------------------");
+        Console.Write("Digite um número inteiro:  ");
+        string strNumeroDigitado = Console.ReadLine();
+
+        int numeroDigitado = Convert.ToInt32(strNumeroDigitado);
+
+        Console.WriteLine("O número digitado foi: " + numeroDigitado);
         Console.ReadLine();
         continue;
     }
@@ -136,7 +107,6 @@ while (true == true)
     int resultado;
     string textoOperacao;
 
-    //estrutura de decisão
 
     if (opcao == "1")
     {
@@ -167,7 +137,6 @@ while (true == true)
         contadorOperacoes++;
     }
 
-    ///int resultado = primeiroNumero + segundoNumero;
 
     Console.WriteLine("O resultado é: " + resultado);
 
